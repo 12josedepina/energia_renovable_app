@@ -7,6 +7,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
 
+import pandas as pd
+import streamlit as st
+
+@st.cache_data
+def cargar_datos():
+  return pd.read_csv("tus_datos.csv")
+
+df = cargar_datos()
+
+
 AUTOR = "Tu nombre"  # editá esto
 DATA = Path(__file__).parent / "data"
 
@@ -369,4 +379,4 @@ with t6:
 
 **Métricas.** MAE: error medio en GWh. RMSE: penaliza más los errores grandes. WAPE: error total relativo a lo generado. R²: cuánto mejora al promedio.
 """)
-    st.caption(f"Hecho con Streamlit y Plotly. Autor: {AUTOR}")
+    st.caption(f"Hecho con Streamlit y Plotly.")
