@@ -10,12 +10,6 @@ import streamlit as st
 import pandas as pd
 import streamlit as st
 
-@st.cache_data
-def cargar_datos():
-  return pd.read_csv("tus_datos.csv")
-
-df = cargar_datos()
-
 
 AUTOR = "Tu nombre"  # editá esto
 DATA = Path(__file__).parent / "data"
